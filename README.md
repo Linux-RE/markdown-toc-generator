@@ -20,13 +20,13 @@ A simple TypeScript utility to generate a **flat numbered Table of Contents (TOC
 ## 📦 Installation
 
 ```bash
-npm install your-package-name
+npm i @rrtechpro/markdown-toc-generator
 ```
 
 or with yarn:
 
 ```bash
-yarn add your-package-name
+yarn add @rrtechpro/markdown-toc-generator
 ```
 
 ---
@@ -34,7 +34,7 @@ yarn add your-package-name
 ## 🚀 Usage
 
 ```typescript
-import { generateToc } from 'your-package-name';
+import { generateToc } from '@rrtechpro/markdown-toc-generator';
 
 const markdown = `
 # Introduction
@@ -91,7 +91,7 @@ Returns a markdown-formatted **Table of Contents** string.
 Clone the repo:
 
 ```bash
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Linux-RE/markdown-toc-generator.git)
+git clone [https://github.com/Linux-RE/markdown-toc-generator.git](https://github.com/Linux-RE/markdown-toc-generator.git)
 cd markdown-toc-generator
 npm install
 npm run build
