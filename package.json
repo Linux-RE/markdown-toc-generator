@@ -1,6 +1,6 @@
 {
   "name": "@rrtechpro/markdown-toc-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple Markdown TOC generator written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/parser.d.ts",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Linux-RE/markdownUI.git"
+    "url": "git+https://github.com/Linux-RE/markdown-toc-generator.git"
   },
   "keywords": [
     "markdown",
@@ -29,9 +29,9 @@
   "author": "Rajesh Epili",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Linux-RE/markdownUI/issues"
+    "url": "https://github.com/Linux-RE/markdown-toc-generator/issues"
   },
-  "homepage": "https://github.com/Linux-RE/markdownUI#readme",
+  "homepage": "https://github.com/Linux-RE/markdown-toc-generator#readme",
   "engines": {
     "node": ">=16"
   }
