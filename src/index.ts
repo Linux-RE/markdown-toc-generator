@@ -22,7 +22,10 @@ export function generateToc(markdownContent: string): string {
             numbering.fill(0, level);
 
             // Build section number string (e.g., "2.1.3")
-            const sectionNumbers = numbering.slice(0, level).join('.');
+            let sectionNumbers = numbering.slice(0, level).join('.');
+            if (level === 1) {
+                sectionNumbers += '.';
+            }
 
             // Create slug for the link
             const slug = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
