@@ -91,7 +91,7 @@ Returns a markdown-formatted **Table of Contents** string.
 Clone the repo:
 
 ```bash
-git clone [https://github.com/Linux-RE/markdown-toc-generator.git](https://github.com/Linux-RE/markdown-toc-generator.git)
+git clone https://github.com/Linux-RE/markdown-toc-generator.git
 cd markdown-toc-generator
 npm install
 npm run build
