@@ -1,0 +1,33 @@
+# Ignore tests
+__tests__/
+*.test.ts
+*.spec.ts
+
+# Ignore configs and scripts
+jest.config.js
+tsconfig.json
+*.log
+
+# Ignore dev dependencies
+node_modules/
+coverage/
+
+# Ignore source files if you're only publishing the build
+src/
+
+# Ignore editor configs
+.vscode/
+.idea/
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore lock files (optional, depending on your setup)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Misc
+.DS_Store
