@@ -1,4 +1,6 @@
 # Ignore tests
+test/
+tests/
 __tests__/
 *.test.ts
 *.spec.ts
