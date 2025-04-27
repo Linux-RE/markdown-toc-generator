@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@rrtechpro/markdown-toc-generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-blue-600">@rrtechpro/markdown-toc-generator</h1>
+            <nav class="space-x-4 text-sm">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#install" class="nav-link">Installation</a>
+                <a href="#usage" class="nav-link">Usage</a>
+                <a href="https://github.com/linux-re/markdown-toc-generator" target="_blank"
+                    class="nav-link">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="text-center py-20 bg-gradient-to-r from-blue-100 to-indigo-100">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Generate Markdown TOCs Effortlessly</h2>
+        <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            A tiny utility that parses your markdown files and automatically generates a clean, organized Table of
+            Contents. Perfect for docs and READMEs.
+        </p>
+        <div class="flex justify-center space-x-4">
+            <a href="#install" class="cta-btn">Get Started</a>
+            <a href="https://www.npmjs.com/package/@rrtechpro/markdown-toc-generator" target="_blank"
+                class="cta-btn-outline">View on NPM</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 px-6 container mx-auto">
+        <h3 class="section-title">📚 About</h3>
+        <p class="text-gray-700 leading-relaxed max-w-3xl">
+            <code class="bg-gray-200 px-2 py-1 rounded">@rrtechpro/markdown-toc-generator</code> is a lightweight
+            Node.js module designed to make your markdown documentation easier to navigate. Automatically generate Table
+            of Contents from headings in your files with zero configuration.
+        </p>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-16 px-6 bg-gray-100 container mx-auto">
+        <h3 class="section-title">✨ Features</h3>
+        <ul class="feature-list">
+            <li><i class="fas fa-check-circle text-blue-500"></i> Simple API</li>
+            <li><i class="fas fa-bolt text-yellow-500"></i> Fast parsing</li>
+            <li><i class="fas fa-brain text-green-500"></i> Smart heading detection</li>
+            <li><i class="fas fa-folder-open text-purple-500"></i> Supports nested sections</li>
+            <li><i class="fas fa-lightbulb text-orange-500"></i> Perfect for README.md or docs</li>
+            <li><i class="fas fa-tools text-gray-500"></i> Lightweight with zero dependencies</li>
+        </ul>
+    </section>
+
+    <!-- Installation -->
+    <section id="install" class="py-16 px-6 container mx-auto">
+        <h3 class="section-title">📦 Installation</h3>
+        <div class="bg-white p-4 rounded shadow overflow-x-auto border">
+            <code class="text-blue-700 text-sm">npm install @rrtechpro/markdown-toc-generator</code>
+        </div>
+    </section>
+
+    <!-- Usage -->
+    <section id="usage" class="py-16 px-6 container mx-auto">
+        <h3 class="section-title">⚙️ Usage Example</h3>
+        <div class="bg-gray-900 text-white p-6 rounded shadow overflow-x-auto text-sm leading-relaxed">
+            <pre><code>
+const generateTOC = require('@rrtechpro/markdown-toc-generator');
+
+const markdownContent = `
+# Title
+## Section 1
+### Subsection
+`;
+
+const toc = generateTOC(markdownContent);
+console.log(toc);
+            </code></pre>
+        </div>
+    </section>
+
+    <!-- Call-to-action Footer -->
+    <section class="text-center py-12 bg-blue-50">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Ready to organize your markdown?</h3>
+        <a href="https://www.npmjs.com/package/@rrtechpro/markdown-toc-generator" target="_blank" class="cta-btn">Try it
+            on NPM</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-6 text-center">
+        <p class="text-gray-500 text-sm">© 2025 <a
+                href="https://www.npmjs.com/package/@rrtechpro/markdown-toc-generator"
+                class="hover:underline">@rrtechpro</a>. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
