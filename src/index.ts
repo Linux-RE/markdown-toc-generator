@@ -4,7 +4,7 @@ export type TOCOptions = {
     format: 'html' | 'markdown';
     tocTitle: { level: number; title: string };
     addBackToTop: boolean;
-    numberingStyle: 'numeric' | 'roman' | 'alphabetical';
+    numberingStyle?: 'numeric' | 'roman' | 'alphabetical';
     tocFooter: string;
     anchorPrefix: string;
 };
@@ -14,10 +14,13 @@ export function generateTOC(md: string, options: TOCOptions): string {
         format,
         tocTitle,
         addBackToTop,
-        numberingStyle,
         tocFooter,
         anchorPrefix,
     } = options;
+
+    const numberingStyle = format === 'markdown' && options.numberingStyle === undefined
+        ? 'numeric'
+        : options.numberingStyle ?? 'numeric';
 
     const lines = md.split('\n');
     const numbering: number[] = [];
@@ -67,19 +70,23 @@ export function generateTOC(md: string, options: TOCOptions): string {
 
         prevLevel = lvl;
     });
+
     for (let i = prevLevel; i >= 1; i--) {
         html.push(`    </li>`);
         html.push(`    </ol>`);
     }
+
     if (addBackToTop) {
         html.push(`  <li><a href="#">Back to Top</a></li>`);
     }
+
     html.push(`  <p><em>${tocFooter}</em></p>`);
     html.push(`</nav>`);
 
     if (format === 'html') {
         return html.join('\n');
     }
+
     return tocTitle.title + '\n\n' +
         lines
             .filter(l => l.startsWith('#'))
