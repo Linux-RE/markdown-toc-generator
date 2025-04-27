@@ -46,7 +46,8 @@
     <section>
       <h2 class="text-3xl font-bold mb-4">📦 Installation</h2>
       <div class="bg-gray-100 p-4 rounded-md shadow overflow-x-auto">
-        <pre><code class="text-indigo-600">npm install @rrtechpro/markdown-toc-generator</code></pre>
+        <pre><code id="npm-install" class="text-indigo-600">npm install @rrtechpro/markdown-toc-generator</code></pre>
+        <button onclick="copyToClipboard()" class="mt-4 inline-block bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Copy Command 📋</button>
       </div>
     </section>
 
@@ -121,10 +122,18 @@ console.log(generateTOC(markdownContent, options));
       </div>
     </section>
 
+    <!-- Live Sandbox Link -->
+    <section>
+      <h2 class="text-3xl font-bold mb-4">💻 Live Sandbox</h2>
+      <p class="text-lg">
+        Check out the live demo and play around with the TOC generation on <a href="https://codepen.io/rrtechpro/pen/xyz123" target="_blank" class="text-indigo-600 hover:underline">CodePen</a> 🚀.
+      </p>
+    </section>
+
     <!-- License -->
     <section>
       <h2 class="text-3xl font-bold mb-4">🖋️ License</h2>
-      <p class="text-lg">MIT License. Free to use and modify 🚀.</p>
+      <p class="text-lg">This project is licensed under the <strong>GPL-3.0 License</strong> — GNU General Public License v3.0. Feel free to use, modify, and share!</p>
     </section>
 
   </main>
@@ -133,6 +142,16 @@ console.log(generateTOC(markdownContent, options));
   <footer class="bg-indigo-700 text-white text-center py-6">
     <p>© 2025 @rrtechpro — Built with ❤️ and TailwindCSS</p>
   </footer>
+
+  <script>
+    // Function to copy text to clipboard
+    function copyToClipboard() {
+      const npmInstallCommand = document.getElementById("npm-install").textContent;
+      navigator.clipboard.writeText(npmInstallCommand).then(() => {
+        alert("Command copied to clipboard! 📋");
+      });
+    }
+  </script>
 
 </body>
 </html>
