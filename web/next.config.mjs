@@ -10,7 +10,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // This setting is required for GitHub Pages
   images: {
     unoptimized: true,
   },
