@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# TypeScript compilation artifacts
+*.tsbuildinfo
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# macOS and Linux system files
+.DS_Store
+Thumbs.db
+
+# Ignore test files if you don't want them in your repo (Optional)
+test/
+
+# Ignore the compiled JavaScript files if you don’t want them in the repo
+src/**/*.js
+src/**/*.d.ts

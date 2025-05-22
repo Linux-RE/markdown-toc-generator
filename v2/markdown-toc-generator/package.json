@@ -1,0 +1,44 @@
+{
+  "name": "@rrtechpro/markdown-toc-generator",
+  "version": "2.0.0",
+  "description": "A TypeScript utility to generate TOC (Table of Contents) from markdown, with HTML/Markdown/JSON export options.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node test/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Linux-RE/markdown-toc-generator.git"
+  },
+  "keywords": [
+    "markdown",
+    "toc",
+    "table of contents",
+    "typescript",
+    "generator"
+  ],
+  "author": "Rajesh Epili",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/Linux-RE/markdown-toc-generator/issues"
+  },
+  "homepage": "https://github.com/Linux-RE/markdown-toc-generator#readme",
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}
