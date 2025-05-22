@@ -1,16 +1,34 @@
 # Ignore TypeScript source files
 src/
-web/
 
 # Ignore test files
 test/
 
-# Ignore configuration files (if you don't want them to be part of the npm package)
-tsconfig.json
-tsconfig.tsbuildinfo
-package.json
+# Ignore build directories
+dist/
 
-# Ignore logs and temporary files
+# Ignore development dependencies and configs
+*.config.js
 *.log
-*.tmp
-*.swp
+*.md
+*.tsbuildinfo
+*.tgz
+
+# Ignore IDE/Editor files
+.vscode/
+.idea/
+
+# Ignore node_modules (already included by default)
+node_modules/
+
+# Ignore package manager lock files (if you want to force clean installs)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore Tailwind CSS build directory
+tailwind.config.js
+postcss.config.js
+
+# Ignore coverage reports
+coverage/

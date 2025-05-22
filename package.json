@@ -1,6 +1,6 @@
 {
   "name": "react-tocify",
-  "version": "2.1.2",
+  "version": "1.0.0",
   "description": "A React component and utility to generate a Table of Contents (TOC) from markdown, with export options in HTML, Markdown, and JSON formats.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
