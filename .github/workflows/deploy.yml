@@ -32,15 +32,19 @@ jobs:
           version: 10
       
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          cd web
+          pnpm install
       
       - name: Build with Next.js
-        run: pnpm build
+        run: |
+          cd web
+          pnpm build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: ./web/out
+          path: web/out
 
   deploy:
     environment:
