@@ -1,7 +1,7 @@
 {
-  "name": "@rrtechpro/markdown-toc-generator",
-  "version": "2.0.0",
-  "description": "A TypeScript utility to generate TOC (Table of Contents) from markdown, with HTML/Markdown/JSON export options.",
+  "name": "react-tocify",
+  "version": "2.1.2",
+  "description": "A React component and utility to generate a Table of Contents (TOC) from markdown, with export options in HTML, Markdown, and JSON formats.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,31 +14,50 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "ts-node test/test.ts"
+    "test": "ts-node test/test.ts",
+    "start": "tsc && node dist/index.js",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src/**/*.{ts,tsx}"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Linux-RE/markdown-toc-generator.git"
+    "url": "git+https://github.com/Linux-RE/react-tocify.git"
   },
   "keywords": [
     "markdown",
     "toc",
     "table of contents",
+    "react",
     "typescript",
-    "generator"
+    "generator",
+    "react component",
+    "html toc"
   ],
   "author": "Rajesh Epili",
   "license": "GPL-3.0-only",
   "bugs": {
-    "url": "https://github.com/Linux-RE/markdown-toc-generator/issues"
+    "url": "https://github.com/Linux-RE/react-tocify/issues"
   },
-  "homepage": "https://github.com/Linux-RE/markdown-toc-generator#readme",
+  "homepage": "https://github.com/Linux-RE/react-tocify#readme",
   "engines": {
     "node": ">=16"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "@types/react": "^19.1.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.0",
+    "eslint-plugin-react": "^7.31.2",
+    "eslint-config-prettier": "^8.3.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.7",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^4.1.7"
   }
 }

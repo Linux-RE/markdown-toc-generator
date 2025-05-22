@@ -1,15 +1,20 @@
-# TOC Generator 📑
+# React Table of Contents (TOC) Generator 📑
 
-**TOC Generator** is a tool to automatically generate a Table of Contents (TOC) for markdown files. It allows you to extract headings from markdown content and generate TOC entries in multiple formats such as **JSON**, **HTML**, and **Markdown**. It also offers customizable anchor IDs, smooth scrolling, and collapsible TOC items for better navigation. 🚀
+**React TOC Generator** is a powerful tool for generating a Table of Contents (TOC) for Markdown content. It enables you to extract headings from Markdown and generate TOC entries in multiple formats like **JSON**, **Markdown**, and **HTML**. Additionally, it provides an interactive React component to display the TOC, offering smooth scrolling, collapsible items, and customizable anchor IDs.
+
+---
 
 ## Features ✨
 
-- Automatically generates a Table of Contents from Markdown headings. 📃
-- Customizable anchor IDs for each heading. 🔗
-- Export the TOC to **JSON**, **Markdown**, or **HTML** format. 📊
-- Collapsible and searchable TOC items for a better user experience. 🔍
-- Supports smooth scrolling and scrollspy for active headings. 🧑‍💻
-- Easily configurable depth limit for the TOC. 🛠️
+* Automatically generates a Table of Contents from Markdown headings. 📃
+* Customizable anchor IDs for each heading. 🔗
+* Export the TOC to **JSON**, **Markdown**, or **HTML** formats. 📊
+* React component to display an interactive TOC with collapsible and smooth-scroll features. 🔍
+* Tailwind CSS styles for easy customization and a responsive design. 🎨
+* Subtle animations for toggle motion and smooth scrolling. 🧑‍💻
+* Easily configurable depth limit for the TOC. 🛠️
+
+---
 
 ## Table of Contents 📋
 
@@ -18,23 +23,138 @@
 3. [API](#api)
 4. [Examples](#examples)
 5. [Contributing](#contributing)
+6. [License](#license)
+
+---
 
 ## Installation ⚙️
 
-To install **TOC Generator**, run the following npm command:
+To install **React TOC Generator**, run the following npm or yarn command:
 
 ```bash
-npm install markdown-toc-generator
-````
+npm install react-toc-markdown
+```
+
+or
+
+```bash
+yarn add react-toc-markdown
+```
+
+---
 
 ## Usage 💻
 
-Once installed, you can use the **TOC Generator** in your project by importing it and calling the appropriate functions.
+Once installed, you can use the **React TOC Generator** in your project by importing the React component and the necessary utility functions.
 
-### Example Usage 📝:
+### 1. **Using the React Component**
 
-```typescript
-import { buildToc, exportTocAsHtml, exportTocAsJson, exportTocAsMarkdown } from 'markdown-toc-generator';
+The `TOC` component allows you to display a dynamic Table of Contents for your Markdown content.
+
+#### Example Usage 📝:
+
+```tsx
+import React from 'react';
+import TOC from 'react-toc-markdown';
+
+const markdownContent = `
+# Introduction
+This is an introduction.
+
+## Features
+Features of the project.
+
+### Sub-feature 1
+Details about sub-feature 1.
+
+## Conclusion
+Final thoughts.
+`;
+
+const MyComponent: React.FC = () => {
+  return (
+    <div>
+      <h1>My Markdown Document</h1>
+      <TOC markdown={markdownContent} maxDepth={3} />
+    </div>
+  );
+};
+
+export default MyComponent;
+```
+
+### 2. **Exporting the TOC in Different Formats**
+
+You can also generate the TOC as JSON, Markdown, or HTML using the `buildToc` function.
+
+#### Example Usage 📝:
+
+```tsx
+import { buildToc } from 'react-toc-markdown';
+
+const markdownContent = `
+# Introduction
+## Subheading 1
+### Sub-subheading 1
+## Subheading 2
+`;
+
+const jsonToc = buildToc({
+  markdown: markdownContent,
+  maxDepth: 3,
+  export: 'JSON', // 'Markdown' or 'HTML' are also valid options
+});
+
+console.log(jsonToc);
+```
+
+---
+
+## API 🛠️
+
+### `buildToc(options: { markdown?: string, maxDepth?: number, export: 'JSON' | 'Markdown' | 'HTML' })`
+
+* **markdown**: Optional. The markdown content as a string. 📄
+* **maxDepth**: Optional. The maximum depth of headings to include in the TOC (default is `6`). ⚖️
+* **export**: The format for the TOC export. One of `'JSON'`, `'Markdown'`, or `'HTML'`.
+
+Returns the TOC in the specified format.
+
+### `TOC` React Component
+
+* **markdown**: The markdown content as a string.
+* **maxDepth**: Optional. Limits the TOC depth (default is `6`).
+* **enableToggle**: Optional. If set to `true`, allows collapsing/expanding of nested items.
+
+#### Example:
+
+```tsx
+<TOC markdown={markdownContent} maxDepth={3} />
+```
+
+---
+
+## Customization 🎨
+
+* **Custom Anchor IDs**: By default, anchor IDs are automatically generated from the heading text. However, you can customize the anchor ID by passing an optional `anchorId` parameter when building the TOC or in the React component. 🏷️
+* **Depth Limiting**: Control the depth of the TOC by setting the `maxDepth` option. 🛠️
+* **Tailwind CSS**: Tailwind CSS is used for styling. You can override the styles or customize them in your Tailwind config.
+
+Example:
+
+```tsx
+import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
+```
+
+---
+
+## Examples 💡
+
+### TOC with Collapsible Items and Smooth Scroll
+
+```tsx
+import React from 'react';
+import TOC from 'react-toc-markdown';
 
 const markdownContent = `
 # Introduction
@@ -53,60 +173,29 @@ Details about subheading 2.
 Summary of the content.
 `;
 
-const toc = buildToc(markdownContent);
+const App: React.FC = () => {
+  return (
+    <div>
+      <h1>My Markdown Document</h1>
+      <TOC markdown={markdownContent} maxDepth={3} />
+    </div>
+  );
+};
 
-// Export as JSON
-const jsonToc = exportTocAsJson(toc);
-console.log("JSON Export:\n", jsonToc);
-
-// Export as Markdown
-const markdownToc = exportTocAsMarkdown(toc);
-console.log("\nMarkdown Export:\n", markdownToc);
-
-// Export as HTML
-const htmlToc = exportTocAsHtml(toc);
-console.log("\nHTML Export:\n", htmlToc);
+export default App;
 ```
 
-### Customization 🎨
+### Output:
 
-* **Custom Anchor IDs**: The default anchor IDs are automatically generated based on the heading text, but you can customize them when creating the TOC by passing an optional `anchorId` parameter to each heading. 🏷️
-* **Depth Limiting**: You can limit the depth of the TOC to display only a specific number of heading levels. 🔢
+* The TOC will display a collapsible list of sections and subsections.
+* Clicking on a TOC link scrolls smoothly to the corresponding section.
+* The "▶" toggle indicator will rotate when clicking to expand or collapse nested TOC items.
 
-## API 🛠️
-
-### `buildToc(content: string, options?: { maxDepth: number }): TocItem[]`
-
-* **content**: The markdown content as a string. 📄
-* **options.maxDepth**: Optional. The maximum depth of headings to include in the TOC (default is `6`). ⚖️
-
-Returns an array of `TocItem` objects that represent the structure of the TOC. 📑
-
-### `exportTocAsJson(toc: TocItem[]): string`
-
-* **toc**: An array of `TocItem` objects to be exported as JSON. 🗃️
-
-Returns the TOC as a JSON string. 🔠
-
-### `exportTocAsMarkdown(toc: TocItem[]): string`
-
-* **toc**: An array of `TocItem` objects to be exported as Markdown. 📝
-
-Returns the TOC as a Markdown string. ✒️
-
-### `exportTocAsHtml(toc: TocItem[]): string`
-
-* **toc**: An array of `TocItem` objects to be exported as HTML. 🌐
-
-Returns the TOC as an HTML string. 💻
-
-## Examples 💡
-
-You can find some working examples of the TOC Generator in the [Examples](examples.html) section of the documentation. 🔗
+---
 
 ## Contributing 🤝
 
-We welcome contributions! If you want to contribute to **TOC Generator**, follow these steps:
+We welcome contributions! If you want to contribute to **React TOC Generator**, follow these steps:
 
 1. Fork the repository. 🍴
 2. Create a new branch (`git checkout -b feature-name`). 🌱
@@ -117,7 +206,7 @@ We welcome contributions! If you want to contribute to **TOC Generator**, follow
 
 ### Issues 🐞
 
-If you encounter any bugs or have feature requests, please open an issue on our [GitHub repository](https://github.com/Linux-RE/markdown-toc-generator/). 🐙
+If you encounter any bugs or have feature requests, please open an issue on our [GitHub repository](https://github.com/your-repo/react-toc-markdown). 🐙
 
 ---
 

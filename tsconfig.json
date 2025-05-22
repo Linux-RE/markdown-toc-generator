@@ -1,18 +1,38 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "declaration": true,
-    "esModuleInterop": false,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
     "strict": true,
-    "moduleResolution": "node"
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
-    "src/**/*.ts",
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "tests"
+    "dist"
   ]
 }
