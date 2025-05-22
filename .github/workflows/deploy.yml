@@ -20,9 +20,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
-      
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3.9.1
+        with:
+          node-version: '18'
+
       - name: Set up pnpm
         uses: pnpm/action-setup@v4.1.0
+        with:
+          version: 10
       
       - name: Install dependencies
         run: pnpm install
@@ -33,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: ./out
+          path: ./web/out
 
   deploy:
     environment:
