@@ -1,0 +1,16 @@
+# Ignore TypeScript source files
+src/
+web/
+
+# Ignore test files
+test/
+
+# Ignore configuration files (if you don't want them to be part of the npm package)
+tsconfig.json
+tsconfig.tsbuildinfo
+package.json
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.swp
